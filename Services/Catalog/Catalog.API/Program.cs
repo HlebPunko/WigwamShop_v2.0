@@ -2,6 +2,7 @@ using Catalog.Infostructure.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.ApplicationConfigure();
 builder.Services.InfostructureConfigure(builder.Configuration);
 
 builder.Services.AddControllers();

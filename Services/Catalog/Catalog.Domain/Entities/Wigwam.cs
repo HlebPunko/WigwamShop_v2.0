@@ -2,8 +2,8 @@
 {
     public class Wigwam : BaseEntity
     {
-        public string WigwamTitle { get; set; } = null!;
-        public string WigwamDescription { get; set; } = null!;
-        public float Price { get; set; }
+        public string WigwamTitle { get; set; }
+        public string WigwamDescription { get; set; }
+        public decimal Price { get; set; }
     }
 }
