@@ -4,6 +4,7 @@ using Catalog.Infostructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
 
 namespace Catalog.Infostructure.DI
 {
@@ -17,8 +18,21 @@ namespace Catalog.Infostructure.DI
             });
 
             services.AddScoped<ICatalogRepository, CatalogRepository>();
+            services.AddScoped<DataSeeder>();
 
             return services;
+        }
+
+        public async static Task<IApplicationBuilder> SeedDataAsync(this IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>()!.CreateScope())
+            {
+                var service = serviceScope.ServiceProvider.GetService<DataSeeder>();
+
+                await service!.InitializeDBAsync();
+            }
+
+            return app;
         }
     }
 }

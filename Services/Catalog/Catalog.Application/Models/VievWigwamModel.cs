@@ -1,10 +1,11 @@
-﻿namespace Catalog.Domain.Entities
+﻿namespace Catalog.Application.Models
 {
-    public class Wigwam : BaseEntity
+    public class VievWigwamModel
     {
+        public int Id { get; set; }
         public string WigwamTitle { get; set; }
         public string WigwamDescription { get; set; }
         public string Path { get; set; }
-        public decimal Price { get; set; }
+        public float Price { get; set; }
     }
 }
