@@ -1,3 +1,5 @@
+using Catalog.API.Extensions;
+using Catalog.API.Middleware;
 using Catalog.Infostructure.DI;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,8 +11,11 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.UseAuthorization();
+await app.MigrateDatabaseAsync();
+await app.SeedDataAsync();
 
+app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleware>();
 app.MapControllers();
 
 app.Run();

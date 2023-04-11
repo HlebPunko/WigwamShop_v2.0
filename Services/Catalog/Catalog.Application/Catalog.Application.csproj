@@ -8,10 +8,15 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Catalog.Infostructure\Catalog.Infostructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Validator\" />
   </ItemGroup>
 
 </Project>

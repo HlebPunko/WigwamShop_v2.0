@@ -1,6 +1,5 @@
 ﻿using Catalog.Application.Models;
 using Catalog.Application.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.API.Controllers
@@ -24,8 +23,8 @@ namespace Catalog.API.Controllers
             return Ok(wigwams);
         }
 
-        [HttpGet("wigwam")]
-        public async Task<ActionResult<VievWigwamModel>> GetWigwam(int id, CancellationToken cancellationToken)
+        [HttpGet("wigwam/{id}")]
+        public async Task<ActionResult<VievWigwamModel>> GetWigwam([FromRoute] int id, CancellationToken cancellationToken)
         {
             var wigwam = await _catalogService.GetWigwamById(id, cancellationToken);
 
