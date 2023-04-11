@@ -1,15 +1,21 @@
+using Basket.API.Extensions;
+using Basket.Infostructure.DI;
+using Basket.API.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.ApplicationConfigure();
+builder.Services.InfostructureConfigure(builder.Configuration);
 
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+await app.MigrateDatabaseAsync();
 
 app.UseAuthorization();
-
+app.UseMiddleware<ExceptionMiddleware>();
 app.MapControllers();
 
 app.Run();
+
