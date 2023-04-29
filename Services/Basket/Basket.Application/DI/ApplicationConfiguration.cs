@@ -1,9 +1,9 @@
-﻿using Catalog.Application.Services;
-using Catalog.Application.Services.Interfaces;
+﻿using Basket.Application.Services;
+using Basket.Application.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Catalog.Application.DI
+namespace Basket.Infostructure.DI
 {
     public static class ApplicationConfiguration
     {
@@ -11,7 +11,7 @@ namespace Catalog.Application.DI
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<ICatalogService, CatalogService>();
+            services.AddScoped<IBasketService, BasketService>();
 
             return services;
         }
