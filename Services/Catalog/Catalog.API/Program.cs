@@ -1,5 +1,6 @@
 using Catalog.API.Extensions;
 using Catalog.API.Middleware;
+using Catalog.Application.DI;
 using Catalog.Infostructure.DI;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,9 +1,9 @@
-﻿using Catalog.Application.Services;
-using Catalog.Application.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Order.Application.Services;
+using Order.Application.Services.Interfaces;
 using System.Reflection;
 
-namespace Catalog.Application.DI
+namespace Order.Application.DI
 {
     public static class ApplicationConfiguration
     {
@@ -11,7 +11,7 @@ namespace Catalog.Application.DI
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<ICatalogService, CatalogService>();
+            services.AddScoped<IOrderService, OrderService>();
 
             return services;
         }
