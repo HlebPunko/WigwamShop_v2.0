@@ -9,6 +9,7 @@ namespace Basket.Application.Mapping
         public MappingProfile()
         {
             CreateMap<Wigwam, VievWigwamModel>();
+            CreateMap<CreateWigwamModel, Wigwam>();
         }
     }
 }

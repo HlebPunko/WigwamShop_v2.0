@@ -6,7 +6,7 @@ namespace Catalog.Infostructure.Context
 {
     public class CatalogDbContext : DbContext
     {
-        public DbSet<Wigwam> Wigwams { get; set; } = null!;
+        public DbSet<Wigwam> catalog { get; set; } = null!;
 
         public CatalogDbContext(DbContextOptions<CatalogDbContext> options) : base(options) { }
         
