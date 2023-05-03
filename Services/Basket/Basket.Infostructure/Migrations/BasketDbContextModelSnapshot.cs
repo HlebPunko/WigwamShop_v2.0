@@ -23,11 +23,16 @@ namespace Basket.Infostructure.Migrations
 
             modelBuilder.Entity("Basket.Domain.Entities.Wigwam", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("WigwamId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WigwamId"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Path")
                         .IsRequired()
@@ -36,19 +41,9 @@ namespace Basket.Infostructure.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("DECIMAL(18,2)");
 
-                    b.Property<string>("WigwamDescription")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                    b.HasKey("WigwamId");
 
-                    b.Property<string>("WigwamTitle")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Wigwams");
+                    b.ToTable("basket");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,5 +6,7 @@ namespace Basket.Application.Services.Interfaces
     {
         Task<List<VievWigwamModel>> GetAllWigwams(CancellationToken cancellationToken);
         Task<VievWigwamModel> GetWigwamById(int id, CancellationToken cancellationToken);
+        Task<int> DeleteWigwam(int id, CancellationToken cancellationToken);
+        Task<VievWigwamModel> CreateWigwam(CreateWigwamModel wigwam, CancellationToken cancellationToken);
     }
 }

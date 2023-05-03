@@ -18,6 +18,6 @@ namespace Catalog.Infostructure.Repositories
             await _context.Set<Wigwam>().AsNoTracking().ToListAsync(cancellationToken);
 
         public async Task<Wigwam> GetWigwamById(int id, CancellationToken cancellationToken) => 
-            await _context.Set<Wigwam>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            await _context.Set<Wigwam>().AsNoTracking().FirstOrDefaultAsync(x => x.WigwamId == id, cancellationToken);
     }
 }

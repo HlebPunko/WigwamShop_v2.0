@@ -23,11 +23,24 @@ namespace Catalog.Infostructure.Migrations
 
             modelBuilder.Entity("Catalog.Domain.Entities.Wigwam", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("WigwamId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WigwamId"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<float>("Height")
+                        .HasColumnType("real");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Path")
                         .HasColumnType("nvarchar(max)");
@@ -35,19 +48,15 @@ namespace Catalog.Infostructure.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("DECIMAL(18,2)");
 
-                    b.Property<string>("WigwamDescription")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                    b.Property<float>("Weight")
+                        .HasColumnType("real");
 
-                    b.Property<string>("WigwamTitle")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<float>("Width")
+                        .HasColumnType("real");
 
-                    b.HasKey("Id");
+                    b.HasKey("WigwamId");
 
-                    b.ToTable("Wigwams");
+                    b.ToTable("catalog");
                 });
 #pragma warning restore 612, 618
         }
