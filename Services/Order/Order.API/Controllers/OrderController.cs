@@ -24,8 +24,8 @@ namespace Order.API.Controllers
             return Ok(orders);
         }
 
-        [HttpGet("byId")]
-        public async Task<IActionResult> GetOrderByIdAsync([FromQuery] int id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetOrderByIdAsync([FromRoute] int id)
         {
             var order = await _orderService.GetOrderByIdAsync(id, HttpContext.RequestAborted);
 
@@ -40,8 +40,8 @@ namespace Order.API.Controllers
             return Ok(createdOrder);
         }
 
-        [HttpDelete("delete")]
-        public async Task<IActionResult> DeleteOrderAsync(int id)
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteOrderAsync([FromRoute] int id)
         {
             var deletedOrder = await _orderService.DeleteOrderAsync(id, HttpContext.RequestAborted);
 

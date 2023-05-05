@@ -1,7 +1,4 @@
-﻿using Order.Domain.Entities;
-using System.Runtime.CompilerServices;
-
-namespace Order.Infostracture.Repositories.Interfaces
+﻿namespace Order.Infostracture.Repositories.Interfaces
 {
     public interface IOrderRepository
     {
