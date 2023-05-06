@@ -21,29 +21,39 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Infostracture", "Serv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{2178F555-B143-44EE-A8A7-DF9E1B8E9404}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "Services\Catalog\Catalog.Domain\Catalog.Domain.csproj", "{29E52B88-9E68-4EF8-B2C6-488EADC1AEB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "Services\Catalog\Catalog.Domain\Catalog.Domain.csproj", "{29E52B88-9E68-4EF8-B2C6-488EADC1AEB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Application", "Services\Catalog\Catalog.Application\Catalog.Application.csproj", "{9FECC0E3-1421-4069-A45C-8C8C92802BC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Services\Catalog\Catalog.Application\Catalog.Application.csproj", "{9FECC0E3-1421-4069-A45C-8C8C92802BC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infostructure", "Services\Catalog\Catalog.Infostructure\Catalog.Infostructure.csproj", "{8DB52A05-D35F-46C9-9194-7088C0E83D4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Infostructure", "Services\Catalog\Catalog.Infostructure\Catalog.Infostructure.csproj", "{8DB52A05-D35F-46C9-9194-7088C0E83D4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{252F29A4-9BD9-433B-9EB8-622D6194F7EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{252F29A4-9BD9-433B-9EB8-622D6194F7EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Services\Basket\Basket.API\Basket.API.csproj", "{5E244903-CF05-40B3-A109-6BB0A930F2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Services\Basket\Basket.API\Basket.API.csproj", "{5E244903-CF05-40B3-A109-6BB0A930F2C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Application", "Services\Basket\Basket.Application\Basket.Application.csproj", "{9F5E2E19-71E8-4FB7-8E2C-16E1B7E7AFA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.Application", "Services\Basket\Basket.Application\Basket.Application.csproj", "{9F5E2E19-71E8-4FB7-8E2C-16E1B7E7AFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Domain", "Services\Basket\Basket.Domain\Basket.Domain.csproj", "{4FD5F46D-C7B1-4D21-8C28-EACD94F2EC4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.Domain", "Services\Basket\Basket.Domain\Basket.Domain.csproj", "{4FD5F46D-C7B1-4D21-8C28-EACD94F2EC4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Infostructure", "Services\Basket\Basket.Infostructure\Basket.Infostructure.csproj", "{DF76AA42-D11B-4CC6-9579-8CF1E7282C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.Infostructure", "Services\Basket\Basket.Infostructure\Basket.Infostructure.csproj", "{DF76AA42-D11B-4CC6-9579-8CF1E7282C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.API", "Services\Authentification\Auth.API\Auth.API.csproj", "{9EB47B6B-D426-4C9A-94EB-CC31FAF5EBD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.API", "Services\Authentification\Auth.API\Auth.API.csproj", "{9EB47B6B-D426-4C9A-94EB-CC31FAF5EBD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Application", "Services\Authentification\Auth.Application\Auth.Application.csproj", "{6B5E04D6-5445-41F7-81DC-7AA4255FC509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Application", "Services\Authentification\Auth.Application\Auth.Application.csproj", "{6B5E04D6-5445-41F7-81DC-7AA4255FC509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Domain", "Services\Authentification\Auth.Domain\Auth.Domain.csproj", "{C4CB3593-505A-4C62-BF44-233F36D0B85A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Domain", "Services\Authentification\Auth.Domain\Auth.Domain.csproj", "{C4CB3593-505A-4C62-BF44-233F36D0B85A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Infostructure", "Services\Authentification\Auth.Infostructure\Auth.Infostructure.csproj", "{F138BA30-B960-4750-86A4-EBA27EF38E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Infostructure", "Services\Authentification\Auth.Infostructure\Auth.Infostructure.csproj", "{F138BA30-B960-4750-86A4-EBA27EF38E55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Favorite", "Favorite", "{07B7F6FD-08F5-401A-A55B-EDB1792CBF6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Favorite.API", "Services\Favorite\Favorite.API\Favorite.API.csproj", "{5DA1E415-A7FB-4937-9EA2-6A62076E72EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Favorite.Application", "Services\Favorite\Favorite.Application\Favorite.Application.csproj", "{CED01EBE-2A2C-4567-9D5D-628B7F77DBD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Favorite.Domain", "Services\Favorite\Favorite.Domain\Favorite.Domain.csproj", "{5534FF47-7228-4E56-B748-57C50464D0B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Favorite.Infostructure", "Services\Favorite\Favorite.Infostructure\Favorite.Infostructure.csproj", "{28643260-203C-4C9E-9C0A-871EBB527C1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +125,22 @@ Global
 		{F138BA30-B960-4750-86A4-EBA27EF38E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F138BA30-B960-4750-86A4-EBA27EF38E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F138BA30-B960-4750-86A4-EBA27EF38E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA1E415-A7FB-4937-9EA2-6A62076E72EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA1E415-A7FB-4937-9EA2-6A62076E72EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA1E415-A7FB-4937-9EA2-6A62076E72EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA1E415-A7FB-4937-9EA2-6A62076E72EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED01EBE-2A2C-4567-9D5D-628B7F77DBD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED01EBE-2A2C-4567-9D5D-628B7F77DBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED01EBE-2A2C-4567-9D5D-628B7F77DBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED01EBE-2A2C-4567-9D5D-628B7F77DBD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5534FF47-7228-4E56-B748-57C50464D0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5534FF47-7228-4E56-B748-57C50464D0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5534FF47-7228-4E56-B748-57C50464D0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5534FF47-7228-4E56-B748-57C50464D0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28643260-203C-4C9E-9C0A-871EBB527C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28643260-203C-4C9E-9C0A-871EBB527C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28643260-203C-4C9E-9C0A-871EBB527C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28643260-203C-4C9E-9C0A-871EBB527C1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +166,11 @@ Global
 		{6B5E04D6-5445-41F7-81DC-7AA4255FC509} = {E6CFEAA3-83F2-4425-AB9D-422CA8F5FFFA}
 		{C4CB3593-505A-4C62-BF44-233F36D0B85A} = {E6CFEAA3-83F2-4425-AB9D-422CA8F5FFFA}
 		{F138BA30-B960-4750-86A4-EBA27EF38E55} = {E6CFEAA3-83F2-4425-AB9D-422CA8F5FFFA}
+		{07B7F6FD-08F5-401A-A55B-EDB1792CBF6F} = {F8E757E4-D003-41C9-BFF9-8BB50835561D}
+		{5DA1E415-A7FB-4937-9EA2-6A62076E72EA} = {07B7F6FD-08F5-401A-A55B-EDB1792CBF6F}
+		{CED01EBE-2A2C-4567-9D5D-628B7F77DBD9} = {07B7F6FD-08F5-401A-A55B-EDB1792CBF6F}
+		{5534FF47-7228-4E56-B748-57C50464D0B8} = {07B7F6FD-08F5-401A-A55B-EDB1792CBF6F}
+		{28643260-203C-4C9E-9C0A-871EBB527C1E} = {07B7F6FD-08F5-401A-A55B-EDB1792CBF6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AF587B3-B1AA-4115-A17A-F9753DAE887F}
