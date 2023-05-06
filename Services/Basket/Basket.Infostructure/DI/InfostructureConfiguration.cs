@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace Basket.Infostructure.DI
 {
@@ -12,10 +13,22 @@ namespace Basket.Infostructure.DI
     {
         public static IServiceCollection InfostructureConfigure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<BasketDbContext>((DbContextOptionsBuilder options) =>
+            var dockerConnect = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+            if(!string.IsNullOrEmpty(dockerConnect))
             {
-                options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
-            });
+                services.AddDbContext<BasketDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(dockerConnect);
+                });
+            }
+            else
+            {
+                services.AddDbContext<BasketDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
+                });
+            }
 
             services.AddScoped<IBasketRepository, BasketRepository>();
 
