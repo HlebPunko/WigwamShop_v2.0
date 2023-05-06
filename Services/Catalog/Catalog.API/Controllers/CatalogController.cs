@@ -6,16 +6,16 @@ namespace Catalog.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WigwamsController : ControllerBase
+    public class CatalogController : ControllerBase
     {
         private readonly ICatalogService _catalogService;
 
-        public WigwamsController(ICatalogService catalogService)
+        public CatalogController(ICatalogService catalogService)
         {
             _catalogService = catalogService;
         }
 
-        [HttpGet("list-wigwams")]
+        [HttpGet("all")]
         public async Task<ActionResult<List<VievWigwamModel>>> GetWigwams(CancellationToken cancellationToken)
         {
             var wigwams = await _catalogService.GetAllWigwams(cancellationToken);
@@ -23,7 +23,7 @@ namespace Catalog.API.Controllers
             return Ok(wigwams);
         }
 
-        [HttpGet("wigwam/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<VievWigwamModel>> GetWigwam([FromRoute] int id, CancellationToken cancellationToken)
         {
             var wigwam = await _catalogService.GetWigwamById(id, cancellationToken);

@@ -1,5 +1,4 @@
 ﻿using Basket.Application.Models;
-using Basket.Application.Services;
 using Basket.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +16,7 @@ namespace Basket.API.Controllers
             _basketService = basketService;
         }
 
-        [HttpGet("basket-wigwams-list")]
+        [HttpGet("all")]
         public async Task<ActionResult<VievWigwamModel>> GetWigwams(CancellationToken cancellationToken)
         {
             var wigwams = await _basketService.GetAllWigwams(cancellationToken);
@@ -25,7 +24,7 @@ namespace Basket.API.Controllers
             return Ok(wigwams);
         }
 
-        [HttpGet("basket-wigwam/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<VievWigwamModel>> GetWigwam([FromRoute] int id, CancellationToken cancellationToken)
         {
             var wigwams = await _basketService.GetWigwamById(id, cancellationToken);

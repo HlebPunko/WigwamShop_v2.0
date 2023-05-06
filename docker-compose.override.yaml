@@ -1,0 +1,55 @@
+version: '3.4'
+
+services: 
+    basket-api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+            - ASPNETCORE_URLS=http://+:80
+            - DATABASE_URL=Server=host.docker.internal, 1433; Database=basket;User=sa; Password=Password111!; Connect Timeout = 1000
+        ports:
+            - "5101:80"
+        networks:
+            - wigwamnetw
+            
+    catalog-api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+            - ASPNETCORE_URLS=http://+:80
+            - DATABASE_URL=Server=host.docker.internal, 1433; Database=catalog;User=sa; Password=Password111!; Connect Timeout = 1000
+        ports:
+            - "5102:80"
+        networks:
+            - wigwamnetw
+            
+    favorite-api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+            - ASPNETCORE_URLS=http://+:80
+            - DATABASE_URL=Server=host.docker.internal, 1433; Database=favorite;User=sa; Password=Password111!; Connect Timeout = 1000
+        ports:
+            - "5103:80"
+        networks:
+            - wigwamnetw
+            
+    order-api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+            - ASPNETCORE_URLS=http://+:80
+            - DATABASE_URL=Server=host.docker.internal, 1433; Database=order;User=sa; Password=Password111!; Connect Timeout = 1000
+        ports:
+            - "5104:80"
+        networks:
+            - wigwamnetw
+            
+    db: 
+        environment:
+            - "MSSQL_SA_PASSWORD=Password111!" 
+            - "ACCEPT_EULA=Y"
+        ports:
+            - "1433:1433"
+        networks:
+            - wigwamnetw
+            
+networks:
+  wigwamnetw:
+    driver: bridge

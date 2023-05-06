@@ -13,10 +13,22 @@ namespace Order.Infostracture.DI
     {
         public static IServiceCollection InfostructureConfigure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<OrderDbContext>((DbContextOptionsBuilder options) =>
+            var dockerConnect = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+            if(!string.IsNullOrEmpty(dockerConnect))
             {
-                options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
-            });
+                services.AddDbContext<OrderDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(dockerConnect);
+                });
+            }
+            else
+            {
+                services.AddDbContext<OrderDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
+                });
+            }
 
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<DataSeeder>();

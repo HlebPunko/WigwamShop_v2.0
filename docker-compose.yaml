@@ -1,0 +1,43 @@
+version: '3.4'
+
+services: 
+    basket-api:
+        image: ${DOCKER_REGISTRY-}basketapi
+        build:
+            context: .
+            dockerfile: Services/Basket/Basket.API/Dockerfile
+        depends_on:
+            - db
+            - catalog-api
+            
+    catalog-api:
+        image: ${DOCKER_REGISTRY-}catalogapi
+        build:
+            context: .
+            dockerfile: Services/Catalog/Catalog.API/Dockerfile
+        depends_on: 
+            - db
+            
+    favorite-api:
+        image: ${DOCKER_REGISTRY-}favoriteapi
+        build: 
+            context: .
+            dockerfile: Services/Favorite/Favorite.API/Dockerfile
+        depends_on:
+            - db
+            - catalog-api
+            
+    order-api:
+        image: ${DOCKER_REGISTRY-}orderapi
+        build: 
+            context: .
+            dockerfile: Services/Order/Order.API/Dockerfile
+        depends_on:
+            - db
+            - catalog-api
+            
+    db: 
+        image: mcr.microsoft.com/mssql/server:2019-latest 
+        
+        
+

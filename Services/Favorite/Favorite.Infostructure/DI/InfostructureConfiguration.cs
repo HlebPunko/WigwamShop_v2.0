@@ -11,10 +11,22 @@ namespace Favorite.Infostructure.DI
     {
         public static IServiceCollection InfostructureConfigure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<FavoriteDbContext>((DbContextOptionsBuilder options) =>
+            var dockerConnect = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+            if(!string.IsNullOrEmpty(dockerConnect))
             {
-                options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
-            });
+                services.AddDbContext<FavoriteDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(dockerConnect);
+                });
+            }
+            else
+            {
+                services.AddDbContext<FavoriteDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
+                });
+            }
 
             services.AddScoped<IFavoriteRepository, FavoriteRepository>();
 

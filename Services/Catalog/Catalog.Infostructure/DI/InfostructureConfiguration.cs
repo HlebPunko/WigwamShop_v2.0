@@ -12,10 +12,23 @@ namespace Catalog.Infostructure.DI
     {
         public static IServiceCollection InfostructureConfigure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<CatalogDbContext>((DbContextOptionsBuilder options) =>
+            var dockerConnect = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+            if(!string.IsNullOrEmpty(dockerConnect))
             {
-                options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
-            });
+                services.AddDbContext<CatalogDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(dockerConnect);
+                });
+            }
+            else
+            {
+                services.AddDbContext<CatalogDbContext>((DbContextOptionsBuilder options) =>
+                {
+                    options.UseSqlServer(configuration.GetConnectionString("MainConnection"));
+                });
+            }
+           
 
             services.AddScoped<ICatalogRepository, CatalogRepository>();
             services.AddScoped<DataSeeder>();
