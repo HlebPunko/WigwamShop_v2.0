@@ -1,0 +1,9 @@
+export const GET_ITEMS = "GET_ITEMS";
+export const GET_CART = "GET_CART";
+export const POST_CART = "POST_CART";
+export const DELETE_CART = "DELETE_CART";
+export const GET_FAVORITES = "GET_FAVORITES";
+export const POST_FAVORITE = "POST_FAVORITE";
+export const DELETE_FAVORITE = "DELETE_FAVORITE";
+export const GET_ORDER = "GET_ORDER";
+export const POST_ORDER = "POST_ORDER";
