@@ -50,6 +50,12 @@ services:
         networks:
             - wigwamnetw
             
+    client: 
+        ports: 
+            - "50000:3000"
+        networks: 
+        - wigwamnetw
+            
 networks:
   wigwamnetw:
     driver: bridge
