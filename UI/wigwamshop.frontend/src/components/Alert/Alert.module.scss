@@ -1,0 +1,29 @@
+.container {
+    position: fixed;
+    min-width: 200px;
+    height: 40px;
+    bottom: 0;
+    transform: translateY(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: transform 0.5s, color 0.3s;
+    padding: 0 30px;
+
+    p {
+        color: white;
+    }
+
+    &.active {
+        transform: translateY(-20px);
+    }
+
+    &.error {
+        background: color-mix(in srgb, red 25%, red 35%);
+    }
+
+    &.success {
+        background: color-mix(in srgb, green 25%, green 35%);
+    }
+}
