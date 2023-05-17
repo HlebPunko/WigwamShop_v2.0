@@ -30,11 +30,11 @@
     }
 
     &.reg {
-        height: 630px;
+        height: 610px;
     }
 
     &.login {
-        height: 380px;
+        height: 360px;
     }
 
     .panelHeader {
@@ -76,7 +76,7 @@
 
         .passInfo {
             color: var(--textColor);
-            font-size: 15px;
+            font-size: 16px;
             opacity: 0.7;
             width: 400px;
             text-align: center;
@@ -106,7 +106,6 @@
     }
 
     .switch {
-        margin-top: 10px;
         display: flex;
 
         .link {

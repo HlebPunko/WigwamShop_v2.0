@@ -24,7 +24,7 @@ const Login = () => {
 
     const [currLoginData, setCurrLoginData] = useState(initialLoginData);
     const [currRegData, setCurrRegData] = useState(initialRegData);
-    const [currState, setCurrState] = useState("login");
+    const [currState, setCurrState] = useState("reg");
     const [isEmailCorrect, setIsEmailCorrect] = useState(false);
     const [isLoginPassCorrect, setIsLoginPassCorrect] = useState(false);
     const [isRegPassCorrect, setIsRegPassCorrect] = useState(false);

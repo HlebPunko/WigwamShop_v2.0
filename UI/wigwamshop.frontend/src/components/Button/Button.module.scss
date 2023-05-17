@@ -1,17 +1,19 @@
 .container {
     margin-top: 50px;
-    background: rgba(25, 25, 25, 0.2);
-    padding: 5px 20px;
+    border-radius: 18px;
+    padding: 10px 20px;
     border-radius: 10px;
     transition: 0.2s;
     cursor: pointer;
+    background: #9dd558;
 
     &.disabled {
         background: color-mix(
             in srgb,
-            rgba(25, 25, 25, 0.2) 20%,
-            rgba(25, 25, 25, 0.2) 20%
+            rgba(25, 25, 25, 0.5) 20%,
+            rgba(25, 25, 25, 0.5) 20%
         );
+        opacity: 0.5;
         cursor: default;
 
         &:hover {
@@ -24,9 +26,9 @@
     }
 
     .buttonText {
+        margin: 0;
         color: rgba(25, 25, 25, 1);
-        &.big {
-            font-size: 24px;
-        }
+        font-size: 20px;
+        font-weight: 700;
     }
 }
