@@ -23,8 +23,6 @@ function Orders() {
                 setIsLoading(false);
             } catch (error) {
                 showAlert("Ошибка при запросе заказов", "error");
-
-                // alert("Ошибка при запросе заказов");
                 console.error(error);
             }
         })();

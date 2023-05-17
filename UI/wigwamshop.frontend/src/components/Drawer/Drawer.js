@@ -6,6 +6,8 @@ import { useCart } from "../../hooks/useCart";
 import RequestUrls from "../../const/requestUrls";
 import styles from "./Drawer.module.scss";
 import ImageUrls from "../../const/imageUrls";
+import { useContext } from "react";
+import { AlertContext } from "../context/AlertContext";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -14,6 +16,8 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
     const [orderId, setOrderId] = useState(null);
     const [isOrderComplete, setIsOrderComplete] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+
+    const { showAlert } = useContext(AlertContext);
 
     const onClickOrder = async () => {
         try {
@@ -31,7 +35,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
                 await delay(1000);
             }
         } catch (error) {
-            alert("Ошибка при создании заказа :(");
+            showAlert("Ошибка при создании заказа", "error");
         }
         setIsLoading(false);
     };
