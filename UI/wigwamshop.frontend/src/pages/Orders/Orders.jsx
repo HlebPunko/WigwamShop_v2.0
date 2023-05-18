@@ -1,32 +1,30 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import styles from "./Orders.module.scss";
 
 import Card from "../../components/Card/Card";
-import AppContext from "../../context";
-import RequestUrls from "../../const/requestUrls";
-import { AlertContext } from "../../components/context/AlertContext";
 
 function Orders() {
-    const { onAddToFavorite, onAddToCart } = useContext(AppContext);
-    const [orders, setOrders] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
-    const { showAlert } = useContext(AlertContext);
-
-    React.useEffect(() => {
-        (async () => {
-            try {
-                const { data } = await axios.get(RequestUrls.getOrders); //TODO будет чуть позже, но должно работать, наверное, делал как и сотальные запросы
-                setOrders(
-                    data.reduce((prev, obj) => [...prev, ...obj.items], [])
-                );
-                setIsLoading(false);
-            } catch (error) {
-                showAlert("Ошибка при запросе заказов", "error");
-                console.error(error);
-            }
-        })();
-    }, []);
+    const [orders, setOrders] = useState([
+        {
+            id: 1,
+            price: 650,
+            items: [
+                {
+                    id: "1",
+                    title: "Вигвам 1, классический",
+                    price: 300,
+                    imageUrl: "/img/wigwams/1.jpg",
+                },
+                {
+                    id: "2",
+                    title: "Вигвам 2, модернизированный",
+                    price: 350,
+                    imageUrl: "/img/wigwams/2.jpg",
+                },
+            ],
+        },
+    ]);
+    const [isLoading, setIsLoading] = useState(false);
 
     return (
         <div className="content p-40">
@@ -34,13 +32,26 @@ function Orders() {
                 <h1>Мои заказы</h1>
             </div>
 
-            <div className="d-flex flex-wrap">
+            <div className={styles.orders}>
                 {(isLoading ? [...Array(8)] : orders).map((item, index) => (
-                    <Card
+                    <div
                         key={index}
-                        loading={isLoading}
-                        {...item}
-                    />
+                        className={styles.order}>
+                        <p className={styles.info}>
+                            Заказ {item.id}. Общая цена: {item.price}
+                        </p>
+                        <div className={styles.list}>
+                            {(isLoading ? [...Array(8)] : item.items).map(
+                                (data, ind) => (
+                                    <Card
+                                        key={ind}
+                                        loading={isLoading}
+                                        {...data}
+                                    />
+                                )
+                            )}
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

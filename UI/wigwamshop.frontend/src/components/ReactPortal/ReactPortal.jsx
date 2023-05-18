@@ -13,6 +13,7 @@ const ReactPortal = ({ children, wrapperId = "react-portal-wrapper" }) => {
             wrapperEl.setAttribute("id", wrapperId);
             wrapperEl.style.display = "flex";
             wrapperEl.style.justifyContent = "center";
+            wrapperEl.style.zIndex = 200;
             document.body.appendChild(wrapperEl);
             element = wrapperEl;
         }

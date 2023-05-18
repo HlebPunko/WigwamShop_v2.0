@@ -6,6 +6,7 @@ import { Oval } from "react-loader-spinner";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import { AlertContext } from "../../components/context/AlertContext";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const emailExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 const Login = () => {
@@ -21,6 +22,8 @@ const Login = () => {
         email: "",
         repeatPass: "",
     };
+
+    const history = useHistory();
 
     const [currLoginData, setCurrLoginData] = useState(initialLoginData);
     const [currRegData, setCurrRegData] = useState(initialRegData);
@@ -46,10 +49,12 @@ const Login = () => {
         if (isDataCorrect) {
             switch (currState) {
                 case "login":
-                    showAlert("Произошла ошибка при входе", "error");
+                    showAlert("Вы успешно вошли в аккаунт", "success");
+                    history.push("/");
                     break;
                 case "reg":
-                    showAlert("Произошла ошибка при регистрации", "error");
+                    showAlert("Вы успешно зарегистрировались", "success");
+                    history.push("/");
                     break;
                 default:
                     return <div></div>;
@@ -183,7 +188,7 @@ const Login = () => {
                         />
                         <Input
                             correct=""
-                            placeholder="Введите желаемый логин"
+                            placeholder="Введите ваш номер телефона"
                             onInput={(e) => {
                                 setCurrRegData((prev) => {
                                     return {

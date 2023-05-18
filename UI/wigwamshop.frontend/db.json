@@ -1,0 +1,31 @@
+{
+    "catalog": [
+        {
+            "id": 1,
+            "name": "bobus",
+            "age": 25
+        },
+        {
+            "id": 2,
+            "name": "bobus",
+            "age": 25
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "cart": [
+                {
+                    "name": "bobus",
+                    "price": 300
+                },
+                {
+                    "name": "bobus1",
+                    "price": 302
+                }
+            ],
+            "name": "bobus",
+            "email": "bobus"
+        }
+    ]
+}

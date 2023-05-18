@@ -20,10 +20,18 @@
     }
 
     &.error {
-        background: color-mix(in srgb, red 25%, red 35%);
+        background: color-mix(
+            in srgb,
+            rgb(227, 61, 61) 35%,
+            rgb(227, 61, 61) 35%
+        );
     }
 
     &.success {
-        background: color-mix(in srgb, green 25%, green 35%);
+        background: color-mix(
+            in srgb,
+            rgb(30, 208, 30) 35%,
+            rgb(30, 208, 30) 35%
+        );
     }
 }

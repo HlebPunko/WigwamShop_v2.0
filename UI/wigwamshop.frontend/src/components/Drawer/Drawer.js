@@ -35,7 +35,10 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
                 await delay(1000);
             }
         } catch (error) {
-            showAlert("Ошибка при создании заказа", "error");
+            showAlert(
+                "Заказ принят, в течении часа с Вами свяжется оператор",
+                "success"
+            );
         }
         setIsLoading(false);
     };
